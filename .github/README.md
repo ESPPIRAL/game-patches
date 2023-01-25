@@ -1,13 +1,24 @@
 # Xenia Canary Game Patches
-This repository contains game patches for Xenia Canary.
+This repository contains game patches for [Xenia Canary](../../../../xenia-canary).
 
 [![Game Patches Discord](https://img.shields.io/discord/930763773109735484?color=5865F2&label=Game%20Patches%20Discord&logo=discord&logoColor=white)](https://discord.gg/fyRWq3xYNz)
 
 ## Installing/Updating
+### Automatic
+1. Open Windows Explorer
+2. Go to the same folder as `xenia_canary.exe`
+3. While holding <kbd>Shift</kbd>, right click and press `Open PowerShell window here`.
+4. Run the following:
+    ```pwsh
+    #irm
+    iwr https://raw.githubusercontent.com/xenia-canary/game-patches/main/update.ps1 | iex
+    ```
+5. Continue to [enabling patches](#Enabling-patches).
+### Manual
 1. Download the [zip](../../../releases/latest/download/game-patches.zip) file.
-2. Open Xenia Canary.
+2. Open [Xenia Canary](../../../../xenia-canary).
 3. Click `Open` > `Show content directory...`
-4. Go up one folder.
+4. Go up one folder. (where `xenia-canary.exe` is)
 5. Delete `patches` folder if present.
 6. Open `game-patches.zip` and extract `patches` to the directory that contains `content`.
 7. Continue to [enabling patches](#Enabling-patches).
@@ -36,8 +47,9 @@ If the above sections didn't help, you can try the following:
 1. Make sure you followed [Enabling patches](#Enabling-patches).
 2. Make sure you have the right version of the game.
 3. Make sure you have the latest version of Xenia Canary experimental.
-4. Try deleting all of your patches and [updating them](#Installing/Updating).
-5. Try commenting out the `hash` of the patch like so:
+    * Patches aren't supported on master.
+5. Try deleting all of your patches and [updating them](#Installing/Updating).
+6. Try commenting out the `hash` of the patch like so:
     ```toml
     # Add # before hash
     hash = "################"
